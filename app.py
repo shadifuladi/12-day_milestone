@@ -50,17 +50,8 @@ def main():
 def index():
     return render_template('index.html')
 
-#@app.route('/')
-#def index():
-#  return render_template('index.html')
-
-#@app.route('/about')
-#def about():
-#  return render_template('about.html')
-
 @app.route('/graph', methods=['GET', 'POST'])
 def graph():
-    # User inputs from the index.html
     ticker = request.form['ticker']
     ticker = ticker.upper()
     sel = request.form.getlist('priceType')
