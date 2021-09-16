@@ -10,7 +10,7 @@ from bokeh.models import ColumnDataSource
 # get data:
 #########################
 
-def getURL(ticker, key = 'XXX'):
+def getURL(ticker, key = 'JOLFH26C08JHRMJ8'):
   url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={}&apikey={}'.format(ticker, key)
   response = requests.get(url)
   return response
