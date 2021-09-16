@@ -4,11 +4,6 @@ import pandas as pd
 import requests
 from flask import Flask, render_template, request, redirect
 
-
-#########################
-# get data:
-#########################
-
 def myFetch(ticker):
    API_KEY = 'JOLFH26C08JHRMJ8'
    stock_name = 'AAPL'
@@ -17,10 +12,6 @@ def myFetch(ticker):
    result = r.json()	
    df = pd.DataFrame(result['Time Series (Daily)'])
    return df
-
-#########################
-# myPlot function, plots the data!
-#########################
 
 def myPlot(df, sel, ticker):
     p = figure(title="AAPL Prices", x_axis_type="datetime", x_axis_label="Date",
@@ -32,12 +23,6 @@ def myPlot(df, sel, ticker):
     for s in sel:
         p.line(df.index, df[mapping[s]], color=colour[s], legend=ticker + ": " + mapping[s])
     return p
-
-
-
-#########################
-# build the app via flask
-#########################
 
 app = Flask(__name__)
 
