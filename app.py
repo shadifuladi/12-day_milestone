@@ -66,4 +66,6 @@ def graph():
 
 if __name__ == '__main__':
   #app.run(port=33097)
+  const PORT = process.env.PORT
+  app.set("port", PORT)
   app.run(debug=True)
