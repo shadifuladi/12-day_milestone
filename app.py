@@ -39,11 +39,12 @@ def main():
 
 @app.route('/index', methods=['GET', 'POST'])
 def index():
- if request.method == 'GET':
+# if request.method == 'GET':
     return render_template('index.html')
- else:
-#@app.route('/graph', methods=['GET', 'POST'])
-#def graph():
+# else:
+
+@app.route('/graph', methods=['GET', 'POST'])
+def graph():
     app.vars['ticker'] = request.form['ticker']
     #ticker = ticker.upper()
     app.vars['price'] = request.form.getlist('priceType')
