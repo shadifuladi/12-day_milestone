@@ -65,4 +65,5 @@ def graph():
 
 
 if __name__ == '__main__':
-  app.run(port=33097)
+  #app.run(port=33097)
+  app.run(debug=True)
